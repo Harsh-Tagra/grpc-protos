@@ -1,0 +1,22 @@
+{
+    "name": "grpc-protos",
+    "version": "1.0.0",
+    "description": "Shared protobuf definitions for gRPC services",
+    "type": "module",
+    "files": [
+      "proto/"
+    ],
+    "exports": {
+      "./proto": "./proto"
+    },
+    "keywords": [
+      "protobuf",
+      "proto",
+      "grpc",
+      "definitions",
+      "schema"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
