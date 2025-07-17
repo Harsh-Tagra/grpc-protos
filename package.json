@@ -4,7 +4,7 @@
     "description": "Shared protobuf definitions for gRPC services",
     "type": "module",
     "files": [
-      "protos/"
+      "*.proto"
     ],
     "keywords": [
       "protobuf",
