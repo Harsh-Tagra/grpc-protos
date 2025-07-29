@@ -3,7 +3,7 @@ syntax = "proto3";
 package auth;
 
 
-service AuthService {
+service UserService {
   rpc FindUserInfoById (UserInfoRequest) returns (UserInfoResponse);
 }
 
