@@ -4,7 +4,7 @@ package auth;
 
 
 service User {
-  rpc FindUserInfoById (UserInfoRequest) returns (UserInfoResponse);
+  rpc getUserInfoById (UserInfoRequest) returns (UserInfoResponse);
 }
 
 message UserInfoRequest {
