@@ -12,7 +12,13 @@ message UserInfoRequest {
 }
 
 message UserInfoResponse {
-  string id = 1;
-  string name = 2;
+
+
+  id = 1;
+    name = 2;
+    createdAt = 3;
+    updatedAt = 4;
+    plan = 5;
+    profileImage =6 ;
 }
 
