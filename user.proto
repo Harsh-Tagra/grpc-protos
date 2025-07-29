@@ -18,7 +18,6 @@ message UserInfoResponse {
   string updatedAt = 4;
   string plan = 5;
   string profileImage = 6;
-  string createdAt =7;
-  string updatedAt =8 ;
+
 }
 
