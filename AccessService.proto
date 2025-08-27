@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package access;
+
+// The Access service definition
+service AccessService {
+  // Verify access token across all services
+  rpc VerifyAccessToken (VerifyAccessTokenRequest) returns (VerifyAccessTokenResponse);
+}
+
+// Request message
+message VerifyAccessTokenRequest {
+  string token = 1;       // The access token (JWT)
+  string ip = 2;          // IP address of the request
+  string userAgent = 3;   // User agent string
+}
+
+// Response message
+message VerifyAccessTokenResponse {
+  bool valid = 1;         // Whether the token is valid
+  string userId = 2;      // User ID extracted from the token
+  string sessionId = 3;   // Session ID extracted from the token
+  string error = 4;       // Error message if not valid
+  int32 status = 5;       // HTTP-like status code (200, 401, 403, etc.)
+}
