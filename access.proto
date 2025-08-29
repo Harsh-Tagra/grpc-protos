@@ -5,7 +5,7 @@ package access;
 // The Access service definition
 service AccessService {
   // Verify access token across all services
-  rpc AccessVerifier (AccessVerifierRequest) returns (AccessVerifierResponse);
+  rpc verify (AccessVerifierRequest) returns (AccessVerifierResponse);
 }
 
 // Request message
