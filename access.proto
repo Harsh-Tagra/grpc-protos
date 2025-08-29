@@ -5,18 +5,18 @@ package access;
 // The Access service definition
 service AccessService {
   // Verify access token across all services
-  rpc VerifyAccessToken (VerifyAccessTokenRequest) returns (VerifyAccessTokenResponse);
+  rpc AccessVerifier (AccessVerifierRequest) returns (AccessVerifierResponse);
 }
 
 // Request message
-message VerifyAccessTokenRequest {
+message AccessVerifierRequest {
   string token = 1;       // The access token (JWT)
   string ip = 2;          // IP address of the request
   string userAgent = 3;   // User agent string
 }
 
 // Response message
-message VerifyAccessTokenResponse {
+message AccessVerifierResponse {
   bool valid = 1;         // Whether the token is valid
   string userId = 2;      // User ID extracted from the token
   string sessionId = 3;   // Session ID extracted from the token
