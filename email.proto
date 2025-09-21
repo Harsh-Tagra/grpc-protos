@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package emailservice;
+
+service EmailService {
+    rpc sendAcesssEmail(AccessEmailRequest) returns (Response);
+    rpc sendVerificationEmail(VerificationEmailRequest) returns (Response);
+    rpc sendReports(Reports) returns (Response);
+  }
+
+message VerificationEmailRequest {
+  string to = 1;          
+  string subject = 2;      
+  VerificationEmailData data = 3;     
+  int32 retry = 4;       
+}
+message Reports{
+  string to =1;
+  string subject = 2;
+  repeated ReportData data =3;
+  int32 retry =4;
+}
+
+message ReportData {
+  string logo_url = 1;
+  string month = 2;
+  int32 total_clicks = 3;
+  int32 total_qr_scans = 4;
+  int32 new_links = 5;
+  repeated TopLink top_links = 6;
+  repeated TopQRCode top_qr_codes = 7;
+  repeated Country countries = 8;
+  OtherCountries other_countries = 9;
+  int32 year = 10;
+  string created_at = 4;
+}
+
+message TopLink {
+  string title = 1;
+  string url = 2;
+  string short_url = 3;
+  int32 clicks = 4;
+  string created_on = 5; // ISO date string
+}
+
+// Top QR code message
+message TopQRCode {
+  string name = 1;
+  string url = 2;
+  string short_url = 3;
+  int32 scans = 4;
+  string created_on = 5; // ISO date string
+}
+
+// Country traffic message
+message Country {
+  int32 rank = 1;
+  string flag = 2;   // can be emoji or image URL
+  string name = 3;
+  int32 clicks = 4;
+  int32 qr_scans = 5;
+}
+
+// Other countries aggregated stats
+message OtherCountries {
+  int32 clicks = 1;
+  int32 qr_scans = 2;
+}
+
+
+message VerificationEmailData {
+  string name = 1;         
+  string verifyUrl = 2;    
+  int32 expiryHours = 3;    
+  string year = 4;         
+}
+
+message Response {
+  string msg = 1;         
+}
+
+
+message AccessEmailRequest {
+    string to = 1;          
+    string subject = 2;      
+    AccessEmailData data = 3;     
+    int32 retry = 4;       
+  }
+
+  
+message AccessEmailData {
+ string name = 1;
+ string status =2 ;
+ string ipAddress =3 ;
+ string dateTime =4;
+ string secureAccountUrl = 5;
+ string year =6;
+
+}
+
+
+  message report {
+    to: Joi.string().email().required(),
+    subject: Joi.string().min(1).required(),
+    data: Joi.object().required(),
+    createdAt: Joi.date().required(),
+    retry: Joi.number().integer().min(0).required(),
+  }
