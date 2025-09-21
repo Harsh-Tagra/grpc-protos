@@ -32,7 +32,7 @@ message ReportData {
   repeated Country countries = 8;
   OtherCountries other_countries = 9;
   int32 year = 10;
-  string created_at = 4;
+  string created_at = 11;
 }
 
 message TopLink {
