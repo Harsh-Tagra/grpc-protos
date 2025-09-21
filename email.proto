@@ -97,12 +97,3 @@ message AccessEmailData {
  string year =6;
 
 }
-
-
-  message report {
-    to: Joi.string().email().required(),
-    subject: Joi.string().min(1).required(),
-    data: Joi.object().required(),
-    createdAt: Joi.date().required(),
-    retry: Joi.number().integer().min(0).required(),
-  }
