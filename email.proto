@@ -3,9 +3,9 @@ syntax = "proto3";
 package emailservice;
 
 service EmailService {
-    rpc sendAcesssEmail(AccessEmailRequest) returns (Response);
-    rpc sendVerificationEmail(VerificationEmailRequest) returns (Response);
-    rpc sendReports(Reports) returns (Response);
+    rpc sendAcesssEmail(AccessEmailRequest) returns (emailServiceResponse);
+    rpc sendVerificationEmail(VerificationEmailRequest) returns (emailServiceResponse);
+    rpc sendReports(Reports) returns (emailServiceResponse);
   }
 
 message VerificationEmailRequest {
