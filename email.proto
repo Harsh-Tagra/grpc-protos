@@ -75,7 +75,7 @@ message VerificationEmailData {
   string year = 4;         
 }
 
-message Response {
+message emailServiceResponse {
   string msg = 1;         
 }
 
