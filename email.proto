@@ -88,7 +88,7 @@ message VerificationEmailData {
   string name = 1;         
   string verifyUrl = 2;    
   int32 expiryHours = 3;    
-   year = 4;         
+  string year = 4;         
 }
 
 message emailServiceResponse {
