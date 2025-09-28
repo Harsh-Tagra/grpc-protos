@@ -15,24 +15,22 @@ message VerificationEmailRequest {
   int32 retry = 4;       
 }
 message Reports{
-  string to =1;
-  string subject = 2;
   repeated ReportData data =3;
-  int32 retry =4;
 }
 
 message ReportData {
-  string logo_url = 1;
-  string month = 2;
-  int32 total_clicks = 3;
-  int32 total_qr_scans = 4;
-  int32 new_links = 5;
-  repeated TopLink top_links = 6;
-  repeated TopQRCode top_qr_codes = 7;
-  repeated Country countries = 8;
-  OtherCountries other_countries = 9;
-  int32 year = 10;
-  string created_at = 11;
+  string to =1;
+  string subject = 2;
+  string month = 3;
+  int32 total_clicks = 4;
+  int32 total_qr_scans = 5;
+  int32 new_links = 6;
+  repeated TopLink top_links = 7;
+  repeated TopQRCode top_qr_codes = 8;
+  repeated Country countries = 9;
+  OtherCountries other_countries = 10;
+  int32 year = 11;
+  string created_at = 12;
 }
 
 message TopLink {
