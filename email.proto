@@ -6,23 +6,7 @@ service Email {
     rpc sendAcesssEmail(AccessEmailRequest) returns (emailServiceResponse);
     rpc sendVerificationEmail(VerificationEmailRequest) returns (emailServiceResponse);
     rpc sendReports(Reports) returns (emailServiceResponse);
-    rpc sendAuthEmail(AuthEmaillRequest)returns (emailServiceResponse);
   }
-
-  message AuthEmaillRequest {
-    string to = 1;          
-    string subject = 2;      
-    AuthEmailData data = 3;     
-    int32 retry = 4;       
-  }
-
-message AuthEmailData {
-  string name =1 ;
-  string verifyUrl =2 ;
-  int32 expiryHours = 3;
-  string year =4;
-
-}
 
 message VerificationEmailRequest {
   string to = 1;          
