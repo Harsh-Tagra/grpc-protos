@@ -91,7 +91,7 @@ message AccessEmailRequest {
   
 message AccessEmailData {
  string name = 1;
- string status =2 ;
+ string location =2 ;
  string ipAddress =3 ;
  string dateTime =4;
  string secureAccountUrl = 5;
