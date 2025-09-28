@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package emailservice;
 
-service EmailService {
+service Email {
     rpc sendAcesssEmail(AccessEmailRequest) returns (emailServiceResponse);
     rpc sendVerificationEmail(VerificationEmailRequest) returns (emailServiceResponse);
     rpc sendReports(Reports) returns (emailServiceResponse);
