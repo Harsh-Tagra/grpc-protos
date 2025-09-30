@@ -70,7 +70,7 @@ message OtherCountries {
 message VerificationEmailData {
   string name = 1;         
   string verifyUrl = 2;    
-  int32 expiryHours = 3;    
+  int32 expiry = 3;    
   string year = 4;         
 }
 
