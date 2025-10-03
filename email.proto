@@ -13,6 +13,7 @@ service Email {
     string to = 1;
     string subject = 2;
    string resetLink=3;
+   int32 retry =4;
   }
   
 
