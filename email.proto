@@ -6,7 +6,15 @@ service Email {
     rpc sendAcesssEmail(AccessEmailRequest) returns (emailServiceResponse);
     rpc sendVerificationEmail(VerificationEmailRequest) returns (emailServiceResponse);
     rpc sendReports(Reports) returns (emailServiceResponse);
+    rpc sendforgotPassword(ForgotPasswordRequest)returns (emailServiceResponse);
   }
+
+  message ForgotPasswordRequest {
+    string to = 1;
+    string subject = 2;
+   string resetLink=3;
+  }
+  
 
 message VerificationEmailRequest {
   string to = 1;          
