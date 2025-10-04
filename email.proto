@@ -11,9 +11,10 @@ service Email {
 
   message ForgotPasswordRequest {
     string to = 1;
-repeated resetdata=2;
+repeated resetdata data=2;
    int32 retry =3;
   }
+  
   message resetdata{
      string resetLink=1;
   int32 year=2;
