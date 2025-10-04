@@ -17,7 +17,7 @@ service Email {
   
   message resetdata{
      string resetLink=1;
-  int32 year=2;
+  string year=2;
     }
 message VerificationEmailRequest {
   string to = 1;          
