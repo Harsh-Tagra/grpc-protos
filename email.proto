@@ -11,17 +11,17 @@ service Email {
 
   message ForgotPasswordRequest {
     string to = 1;
-    string subject = 2;
-   string resetLink=3;
-   int32 retry =4;
+repeated resetdata=2;
+   int32 retry =3;
   }
-  
-
+  message resetdata{
+     string resetLink=1;
+  int32 year=2;
+    }
 message VerificationEmailRequest {
   string to = 1;          
-  string subject = 2;      
-  VerificationEmailData data = 3;     
-  int32 retry = 4;       
+  VerificationEmailData data = 2;     
+  int32 retry = 3;       
 }
 message Reports{
   repeated ReportData data =3;
@@ -29,18 +29,17 @@ message Reports{
 
 message ReportData {
   string to =1;
-  string subject = 2;
-  string month = 3;
-  int32 total_clicks = 4;
-  int32 total_qr_scans = 5;
-  int32 new_links = 6;
-  repeated TopLink top_links = 7;
-  repeated TopQRCode top_qr_codes = 8;
-  repeated Country countries = 9;
-  OtherCountries other_countries = 10;
-  int32 year = 11;
-  string created_at = 12;
-  int32 retry = 13;   
+  string month = 2;
+  int32 total_clicks = 3;
+  int32 total_qr_scans = 4;
+  int32 new_links = 5;
+  repeated TopLink top_links = 6;
+  repeated TopQRCode top_qr_codes = 7;
+  repeated Country countries = 8;
+  OtherCountries other_countries = 9;
+  int32 year = 10;
+  string created_at = 11;
+  int32 retry = 12;   
 }
 
 message TopLink {
@@ -90,10 +89,9 @@ message emailServiceResponse {
 
 
 message AccessEmailRequest {
-    string to = 1;          
-    string subject = 2;      
-    AccessEmailData data = 3;     
-    int32 retry = 4;       
+    string to = 1;               
+    AccessEmailData data = 2;     
+    int32 retry = 3;       
   }
 
   
