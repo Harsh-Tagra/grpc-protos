@@ -10,14 +10,15 @@ service Email {
   }
 
   message ForgotPasswordRequest {
-    string to = 1;
+  string to = 1;
    resetdata data=2;
    int32 retry =3;
   }
   
   message resetdata{
-     string resetLink=1;
+  string resetLink=1;
   string year=2;
+  int32 expiry = 3;  
     }
 message VerificationEmailRequest {
   string to = 1;          
