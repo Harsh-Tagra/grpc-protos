@@ -15,10 +15,11 @@ service Email {
    int32 retry =3;
   }
   
-  message resetdata{
+  message resetdata{ 
   string resetLink=1;
   string year=2;
-  int32 expiry = 3;  
+  int32 expiry = 3; 
+  string  name =4; 
     }
 message VerificationEmailRequest {
   string to = 1;          
