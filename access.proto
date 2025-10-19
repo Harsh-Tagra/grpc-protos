@@ -6,6 +6,17 @@ package access;
 service AccessService {
   rpc CreateSession (CreateSessionRequest) returns (CreateSessionResponse);
   rpc verify (AccessVerifierRequest) returns (AccessVerifierResponse);
+  rpc delAllsessions (delsessionsRequest) returns(delsessionsResponse);
+}
+
+
+message delsessionsRequest {
+  string user_id =1;
+}
+
+message delsessionsResponse {
+  string msg = 1;  
+       
 }
 
 // Request message
