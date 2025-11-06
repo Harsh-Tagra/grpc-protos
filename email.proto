@@ -82,7 +82,8 @@ message VerificationEmailData {
   string name = 1;         
   string verifyUrl = 2;    
   int32 expiry = 3;    
-  string year = 4;         
+  string year = 4;  
+  string context = 5; // "registration" | "secondary"       
 }
 
 message emailServiceResponse {
