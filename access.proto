@@ -7,6 +7,7 @@ service AccessService {
   rpc CreateSession (CreateSessionRequest) returns (CreateSessionResponse);
   rpc verify (AccessVerifierRequest) returns (AccessVerifierResponse);
   rpc delAllsessions (delsessionsRequest) returns(delsessionsResponse);
+  rpc deleteAllExpiredSessions() returns(delsessionsResponse);
 }
 
 
